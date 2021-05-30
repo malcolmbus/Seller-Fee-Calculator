@@ -3,17 +3,21 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
     <title>Seller Fee Calculator</title>
   </head>
   <body>
+
     <h1>Seller Fee Calculator</h1>
     <div class="tab-container">
-      <button class="tab" id="grailed">Grailed</button>
-      <button class="tab" id="depop">Depop</button>
-      <button class="tab" id="bump">Bump</button>
+      <button class="tab" id="default" onclick="openTab('grailed')">Grailed</button>
+      <button class="tab" id="tab1"  onclick="openTab('depop')">Depop</button>
+      <button class="tab" id=tab2  onclick="openTab('bump')">Bump</button>
     </div>
     <br>
-    <h2>Grailed Fees</h2>
+    <h2 id ="grailed" class="storetitle">Grailed Fees</h2>
+    <h2 id ="depop" class="storetitle">Depop Fees</h2>
+    <h2 id ="bump" class="storetitle">Bump Fees</h2>
     <br>
       <form id="form1" action="index.html" method="post">
         <div class="form-row">
@@ -47,6 +51,5 @@
         <label  id="total">Total:</label>
         <label id="result">--</label>
       </form>
-
   </body>
 </html>
