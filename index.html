@@ -12,7 +12,6 @@
     <div class="tab-container">
       <button class="tab" id="default" onclick="openTab('grailed')">Grailed</button>
       <button class="tab" id="tab1"  onclick="openTab('depop')">Depop</button>
-      <button class="tab" id=tab2  onclick="openTab('bump')">Bump</button>
     </div>
     <br>
     <h2 id ="grailed" class="storetitle">Grailed Fees</h2>
@@ -38,18 +37,22 @@
           </select>
         </div>
         <div class="form-row">
-          <label for="country">Country:</label>
-          <select id="country" name="country">
-            <option value="United States">United States</option>
-            <option value="United Kingdom">United Kingdom</option>
-            <option value="Canada">Canada</option>
-          </select>
+          <input type="radio" id="domestic" name="translocation" value="domestic">
+          <label class ="radiolabel" for="domestic">Domestic</label>
+          <input type="radio" id="international" name="translocation" value="international">
+          <label class="radiolabel" for="international">International</label>
         </div>
         <br>
         <input id="button" type="button" form="form1" name="Calculate" value="Calculate">
         <br><hr>
-        <label  id="total">Total:</label>
-        <label id="result">--</label>
+        <label class="resultlabel" id="sfees"> Seller Fees:</label>
+        <label id="sfeesresult">--</label>
+        <br>
+        <label class="resultlabel" id="pfees"> PayPal Fees:</label>
+        <label id="pfeesresult">--</label>
+        <br>
+        <label class="resultlabel" id="total">Total Profit:</label>
+        <label id="profitresult">--</label>
       </form>
   </body>
 </html>

@@ -52,8 +52,12 @@ label{
   padding: 15px 0;
 }
 
-input{
+input[type=number], [type=button]{
   width: 115px;
+}
+
+input[type=radio]{
+  margin-left: 0;
 }
 
 select{
@@ -61,9 +65,9 @@ select{
 }
 
 #button{
-  margin: 15px 0 15px 55px;
+  margin: 15px 0 15px 72.5px;
 }
 
-#total{
+.resultlabel{
   margin-top: 15px;
 }
