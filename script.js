@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", () => {
+document.getElementById("default").click();
+});
+
 function openTab(tabName){
   var storetitle, i;
 
