@@ -24,11 +24,6 @@ body{
   background-color: #d6d6d6;
 }
 
-.tab:focus{
-  background-color: #a0a0a0;
-  color: #fff;
-}
-
 .storetitle{
   display: none;
 }
