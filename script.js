@@ -19,6 +19,13 @@ function openTab(storeName, tab){
   document.getElementById(storeName).style.display = "block";
   tab.style.backgroundColor = "#a0a0a0";
   tab.style.color = "#fff";
+
+  if(storeName == "grailed"){
+    document.getElementById("radio-container").style.display = "block";
+  }
+  else{
+    document.getElementById("radio-container").style.display = "none";
+  }
   }
 
   // function calculateFees(listPrice, shipCost, currency, translocation){
