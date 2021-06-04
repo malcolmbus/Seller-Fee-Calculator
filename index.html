@@ -10,8 +10,8 @@
 
     <h1>Seller Fee Calculator</h1>
     <div class="tab-container">
-      <button class="tab" id="default" onclick="openTab('grailed', this)">Grailed</button>
-      <button class="tab" id="tab1"  onclick="openTab('depop', this)">Depop</button>
+      <button class="tab" id="grailedtab" onclick="openTab('grailed', this)">Grailed</button>
+      <button class="tab" id="depoptab"  onclick="openTab('depop', this)">Depop</button>
     </div>
     <br>
     <h2 id ="grailed" class="storetitle">Grailed Fees</h2>
@@ -22,7 +22,6 @@
           <label for="listprice">Listing Price:</label>
           <input type="number" id="listprice" name="listprice">
         </div>
-
         <div class="form-row">
           <label for="shipcost">Shipping Cost:</label>
           <input type="number" id="shipcost" name="shipcost">
@@ -37,12 +36,12 @@
         </div>
         <div id="radio-container" class="form-row">
           <input type="radio" id="domestic" name="translocation" value="domestic">
-          <label class ="radiolabel" for="domestic">Domestic</label>
+          <label class="radiolabel" for="domestic">Domestic</label>
           <input type="radio" id="international" name="translocation" value="international">
           <label class="radiolabel" for="international">International</label>
         </div>
         <br>
-        <input id="button" type="button" form="form1" name="Calculate" value="Calculate">
+        <input id="calcbutton" type="button" form="form1" name="Calculate" value="Calculate">
         <br><hr>
         <label class="resultlabel" id="sfees"> Seller Fees:</label>
         <label id="sfeesresult">--</label>
