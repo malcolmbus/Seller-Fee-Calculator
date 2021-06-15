@@ -55,14 +55,12 @@ input[type=radio]{
   margin-left: 0;
 }
 
-select{
-  width: 115px;
-}
-
-#calcbutton{
-  margin: 15px 0 15px 72.5px;
+.calc{
+  margin-left: 72.5px;
+  display: none;
 }
 
 .resultlabel{
   margin-top: 15px;
+  font-weight: normal;
 }

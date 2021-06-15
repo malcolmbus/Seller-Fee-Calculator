@@ -26,23 +26,17 @@
           <label for="shipcost">Shipping Cost:</label>
           <input type="number" id="shipcost" name="shipcost">
         </div>
-        <div class="form-row">
-          <label for="currency">Currency:</label>
-          <select id="currency" name="currency">
-            <option value="USD">USD ($)</option>
-            <option value="GBP">GBP (£)</option>
-            <option value="CAD">CAD (C$)</option>
-          </select>
-        </div>
         <div id="radio-container" class="form-row">
-          <input type="radio" id="domestic" name="translocation" value="domestic">
+          <input type="radio" id="domestic" name="location" value="domestic">
           <label class="radiolabel" for="domestic">Domestic</label>
-          <input type="radio" id="international" name="translocation" value="international">
+          <input type="radio" id="international" name="location" value="international">
           <label class="radiolabel" for="international">International</label>
         </div>
         <br>
-        <input id="calcbutton" type="button" form="form1" name="Calculate" value="Calculate">
-        <br><hr>
+        <input class="calc" id="calcbutton" type="button" form="form1" name="Calculate" value="Calculate" onclick="calculateFees('grailed')">
+        <input class="calc" id="calcbutton2" type="button" form="form1" name="Calculate" value="Calculate" onclick="calculateFees('depop')">
+
+        <hr>
         <label class="resultlabel" id="sfees"> Seller Fees:</label>
         <label id="sfeesresult">--</label>
         <br>
