@@ -1,7 +1,19 @@
+// Clicks the grailed tab by default when the DOM loads
 document.addEventListener("DOMContentLoaded", () => {
 document.getElementById("grailedtab").click();
 });
 
+/*
+  Simulates the functionality of a tab by displaying content
+  specific to the tab selected and hiding the unecessary content.
+
+  Highlights the current tab.
+
+  Calls clearForm method to clear the contents of the form each time the tab is changed.
+
+  @param storeName  the name of the store (grailed or depop) that will determine what is displayed
+  @ param tab the selected tab
+*/
 function openTab(storeName, tab){
   var storeTitle, tabs, i;
 
@@ -34,6 +46,7 @@ function openTab(storeName, tab){
   clearForm();
   }
 
+// clears the form content
   function clearForm(){
     document.getElementById("listprice").value = "";
     document.getElementById("shipcost").value = "";
@@ -46,7 +59,19 @@ function openTab(storeName, tab){
     }
   }
 
+/*
+  Calulates the seller commission fees, PayPal fees and total profit based on the form input.
+
+  Calls the validateForm method and if it returns false it stops the execution of the function.
+
+  @param storeName  the name of the store (grailed or depop) that will determine
+  how the fees and profit is calculated.
+*/
   function calculateFees(storeName){
+
+    if(validateForm() == false){
+      return;
+    }
     var listPrice = document.getElementById("listprice").value;
     var shipCost = document.getElementById("shipcost").value;
     var sellerFee;
@@ -77,3 +102,25 @@ function openTab(storeName, tab){
     document.getElementById("pfeesresult").textContent = paypalFeeResult.toFixed(2);
     document.getElementById("profitresult").textContent = totalProfit.toFixed(2);
   }
+
+// validates user input 
+function validateForm(){
+  if(document.getElementById("listprice").value == ""){
+    alert("Please enter a listing price");
+    return false;
+  }
+  else if(document.getElementById("shipcost").value == ""){
+    alert("Please enter a shipping cost");
+    return false;
+  }
+  else if(document.getElementById("domestic").checked == false &&
+  document.getElementById("international").checked == false){
+    alert("Please select the transaction location");
+    return false;
+  }
+}
+
+/*
+      TODO:
+      Add a breakdown of how the fees are calculated
+*/
