@@ -69,7 +69,7 @@ function openTab(storeName, tab){
 */
   function calculateFees(storeName){
 
-    if(validateForm() == false){
+    if(validateForm(storeName) == false){
       return;
     }
     var listPrice = document.getElementById("listprice").value;
@@ -94,17 +94,18 @@ function openTab(storeName, tab){
       paypalFee = 0.029;
     }
 
-    sellerFeeResult = parseFloat((listPrice - shipCost) * sellerFee);
-    paypalFeeResult = parseFloat((listPrice - shipCost) * paypalFee + 0.30);
-    totalProfit = parseFloat(listPrice - sellerFeeResult - paypalFeeResult);
+    var total = parseFloat(listPrice) + parseFloat(shipCost);
+    sellerFeeResult = total * parseFloat(sellerFee);
+    paypalFeeResult = total * parseFloat(paypalFee) + 0.30;
+    totalProfit = total - sellerFeeResult - paypalFeeResult;
 
     document.getElementById("sfeesresult").textContent = sellerFeeResult.toFixed(2);
     document.getElementById("pfeesresult").textContent = paypalFeeResult.toFixed(2);
     document.getElementById("profitresult").textContent = totalProfit.toFixed(2);
   }
 
-// validates user input 
-function validateForm(){
+// validates user input
+function validateForm(storeName){
   if(document.getElementById("listprice").value == ""){
     alert("Please enter a listing price");
     return false;
@@ -113,14 +114,18 @@ function validateForm(){
     alert("Please enter a shipping cost");
     return false;
   }
-  else if(document.getElementById("domestic").checked == false &&
-  document.getElementById("international").checked == false){
-    alert("Please select the transaction location");
-    return false;
+  if(storeName == "grailed"){
+    if(document.getElementById("domestic").checked == false &&
+    document.getElementById("international").checked == false){
+      alert("Please select the transaction location");
+      return false;
+  }
   }
 }
 
 /*
       TODO:
       Add a breakdown of how the fees are calculated
+      Check calculation for fees and profit and ensure accuracy
+      Style the application better
 */
