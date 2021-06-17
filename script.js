@@ -36,11 +36,15 @@ function openTab(storeName, tab){
     document.getElementById("radio-container").style.display = "block";
     document.getElementById("calcbutton").style.display = "block";
     document.getElementById("calcbutton2").style.display = "none";
+    document.getElementById("grailedfeeinfo").style.display = "block";
+    document.getElementById("depopfeeinfo").style.display = "none";
   }
   else{
     document.getElementById("radio-container").style.display = "none";
     document.getElementById("calcbutton").style.display = "none";
     document.getElementById("calcbutton2").style.display = "block";
+    document.getElementById("grailedfeeinfo").style.display = "none";
+    document.getElementById("depopfeeinfo").style.display = "block";
   }
 
   clearForm();
@@ -125,7 +129,5 @@ function validateForm(storeName){
 
 /*
       TODO:
-      Add a breakdown of how the fees are calculated
-      Check calculation for fees and profit and ensure accuracy
       Style the application better
 */
