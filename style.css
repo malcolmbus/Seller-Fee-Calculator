@@ -3,6 +3,9 @@ body{
   text-align: center;
 }
 
+#page-title{
+  margin: 10px 0;
+}
 .tab-container{
   overflow: hidden;
   border: 1px solid #ccc;
@@ -24,6 +27,16 @@ body{
   background-color: #d6d6d6;
 }
 
+.title-container{
+  margin: 0 auto;
+  width: 290px;
+}
+
+img{
+  max-width: 100%;
+  object-fit: contain;
+}
+
 .storetitle{
   display: none;
 }
@@ -35,16 +48,13 @@ form{
   text-align: left;
   border: 1px solid #ccc;
   padding: 30px;
+  background-color: #F8F8F8;
 }
 
 label{
   display: inline-block;
   width: 115px;
   font-weight: bold;
-}
-
-.form-row{
-  padding: 15px 0;
 }
 
 input[type=number], [type=button]{
@@ -72,4 +82,5 @@ input[type=radio]{
   margin-right: auto;
   margin-top:15px;
   padding: 15px;
+  background-color: #F8F8F8;
 }

@@ -2,40 +2,43 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="script.js"></script>
     <title>Seller Fee Calculator</title>
   </head>
   <body>
-
-    <h1>Seller Fee Calculator</h1>
+    <h1 id="page-title">Seller Fee Calculator</h1>
     <div class="tab-container">
       <button class="tab" id="grailedtab" onclick="openTab('grailed', this)">Grailed</button>
       <button class="tab" id="depoptab"  onclick="openTab('depop', this)">Depop</button>
     </div>
     <br>
-    <h2 id ="grailed" class="storetitle">Grailed Fees</h2>
-    <h2 id ="depop" class="storetitle">Depop Fees</h2>
+    <div class="title-container">
+      <img id="grailed" class="img-responsive storetitle" src="grailed-logo.png" alt="Grailed Fees">
+      <img id="depop" class="img-responsive storetitle" src="depop-logo.png" alt="Depop Fees">
+    </div>
+
     <br>
       <form id="form1" action="index.html" method="post">
-        <div class="form-row">
+        <div class=" form-group">
           <label for="listprice">Listing Price:</label>
           <input type="number" id="listprice" name="listprice">
         </div>
-        <div class="form-row">
+        <div class="form-group">
           <label for="shipcost">Shipping Cost:</label>
           <input type="number" id="shipcost" name="shipcost">
         </div>
-        <div id="radio-container" class="form-row">
+        <div id="radio-container" class="form-group">
           <input type="radio" id="domestic" name="location" value="domestic">
           <label class="radiolabel" for="domestic">Domestic</label>
           <input type="radio" id="international" name="location" value="international">
           <label class="radiolabel" for="international">International</label>
         </div>
         <br>
-        <input class="calc" id="calcbutton" type="button" form="form1" name="Calculate" value="Calculate"
+        <input class="btn btn-outline-secondary calc" id="calcbutton" type="button" form="form1" name="Calculate" value="Calculate"
         onclick="calculateFees('grailed')">
-        <input class="calc" id="calcbutton2" type="button" form="form1" name="Calculate" value="Calculate"
+        <input class="btn btn-outline-secondary calc" id="calcbutton2" type="button" form="form1" name="Calculate" value="Calculate"
         onclick="calculateFees('depop')">
 
         <hr>
@@ -60,7 +63,7 @@
         <p>International Transactions: 4.4% + 30 cents</p>
       </div>
 
-      <div  class="feebreak-container" id="depopfeeinfo">
+      <div class="feebreak-container" id="depopfeeinfo">
         <h3>Fee Breakdown</h3>
         <p>Sellers pay a Commission fee of 10%.</p>
         <p>In addition, there is a PayPal transaction fee of 2.9% + $0.30 in the US
