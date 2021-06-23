@@ -6,10 +6,11 @@ body{
 #page-title{
   margin: 10px 0;
 }
+
 .tab-container{
   overflow: hidden;
   border: 1px solid #ccc;
-  background-color: #f1f1f1;
+  background-color: #f8f8f8;
 }
 
 .tab-container button{
@@ -27,7 +28,7 @@ body{
   background-color: #d6d6d6;
 }
 
-.title-container{
+.heading-container{
   margin: 0 auto;
   width: 290px;
 }
@@ -48,13 +49,12 @@ form{
   text-align: left;
   border: 1px solid #ccc;
   padding: 30px;
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
 }
 
 label{
   display: inline-block;
   width: 115px;
-  font-weight: bold;
 }
 
 input[type=number], [type=button]{
@@ -82,5 +82,5 @@ input[type=radio]{
   margin-right: auto;
   margin-top:15px;
   padding: 15px;
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
 }
