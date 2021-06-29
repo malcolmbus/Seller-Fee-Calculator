@@ -29,7 +29,7 @@ function openTab(storeName, tab){
   }
 
   document.getElementById(storeName).style.display = "block";
-  tab.style.backgroundColor = "#a0a0a0";
+  tab.style.backgroundColor = "#6c757d";
   tab.style.color = "#fff";
 
   if(storeName == "grailed"){
@@ -113,23 +113,15 @@ function openTab(storeName, tab){
 // validates user input
 function validateForm(storeName){
   if(document.getElementById("listprice").value == ""){
-    alert("Please enter a listing price");
     return false;
   }
   else if(document.getElementById("shipcost").value == ""){
-    alert("Please enter a shipping cost");
     return false;
   }
   if(storeName == "grailed"){
     if(document.getElementById("domestic").checked == false &&
     document.getElementById("international").checked == false){
-      alert("Please select the transaction location");
       return false;
   }
   }
 }
-
-/*
-      TODO:
-      Style the application better
-*/

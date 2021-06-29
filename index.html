@@ -15,47 +15,84 @@
       <button class="tab" id="depoptab"  onclick="openTab('depop', this)">Depop</button>
     </div>
     <br>
+
     <div class="heading-container">
       <img id="grailed" class="img-responsive storetitle" src="grailed-logo.png" alt="Grailed Fees">
       <img id="depop" class="img-responsive storetitle" src="depop-logo.png" alt="Depop Fees">
     </div>
-
     <br>
-      <form id="form1" action="index.html" method="post">
-        <div class=" form-group">
-          <label for="listprice">Listing Price:</label>
-          <input type="number" id="listprice" name="listprice">
-        </div>
-        <div class="form-group">
-          <label for="shipcost">Shipping Cost:</label>
-          <input type="number" id="shipcost" name="shipcost">
-        </div>
-        <div id="radio-container" class="form-group">
-          <input type="radio" id="domestic" name="location" value="domestic">
-          <label class="radiolabel" for="domestic">Domestic</label>
-          <input type="radio" id="international" name="location" value="international">
-          <label class="radiolabel" for="international">International</label>
-        </div>
-        <br>
-        <input class="btn btn-outline-secondary calc" id="calcbutton" type="button" form="form1" name="Calculate" value="Calculate"
-        onclick="calculateFees('grailed')">
-        <input class="btn btn-outline-secondary calc" id="calcbutton2" type="button" form="form1" name="Calculate" value="Calculate"
-        onclick="calculateFees('depop')">
 
+      <form id="form1" action="index.html" method="post">
+        <div class="row">
+          <div class="col">
+          <label for="listprice">Listing Price:</label>
+        </div>
+        <div class="col">
+          <input type="number" id="listprice" class="form-control" name="listprice" required>
+        </div>
+      </div>
+      <br>
+
+        <div class="row">
+          <div class="col">
+          <label for="shipcost">Shipping Cost:</label>
+        </div>
+          <div class="col">
+          <input type="number" id="shipcost" class="form-control" name="shipcost" required>
+        </div>
+      </div>
+      <br>
+      <div id="radio-container">
+        <div class="form-check form-check-inline">
+          <input type="radio" id="domestic" class="form-check-input" name="location" value="domestic">
+          <label class="form-check-label" for="domestic">Domestic</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio" id="international" class="form-check-input" name="location" value="international">
+          <label class="form-check-label" for="international">International</label>
+        </div>
+      </div>
+        <br>
+
+        <button class="btn btn-secondary btn-block calc" id="calcbutton" type="button" form="form1"
+        onclick="calculateFees('grailed')">Calculate</button>
+        <button class="btn btn-secondary btn-block calc" id="calcbutton2" type="button" form="form1"
+        onclick="calculateFees('depop')">Calculate</button>
         <hr>
-        <label class="resultlabel" id="sfees"> Seller Fees:</label>
-        <label id="sfeesresult">--</label>
+
+        <div class="row">
+          <div class="col">
+        <label class="resultlabel form-check-label" id="sfees"> Seller Fees:</label>
+      </div>
+      <div class="col">
+        <label id="sfeesresult" class="form-check-label">--</label>
+      </div>
+    </div>
         <br>
-        <label class="resultlabel" id="pfees"> PayPal Fees:</label>
-        <label id="pfeesresult">--</label>
+        <div class="row">
+          <div class="col">
+          <label class="resultlabel form-check-label" id="pfees">PayPal Fees:</label>
+        </div>
+        <div class="col">
+          <label id="pfeesresult" class="form-check-label">--</label>
+        </div>
+      </div>
+
         <br>
-        <label class="resultlabel" id="total">Total Profit:</label>
-        <label id="profitresult">--</label>
+        <div class="row">
+          <div class="col">
+          <label class="resultlabel form-check-label" id="total">Total Profit:</label>
+        </div>
+            <div class="col">
+          <label id="profitresult" class="form-check-label">--</label>
+        </div>
+</div>
       </form>
 
       <br>
-      <div class="feebreak-container" id="grailedfeeinfo">
+      <div class="container feebreak-container" id="grailedfeeinfo">
         <h3>Fee Breakdown</h3>
+        <hr>
         <p>Sellers pay a Commission fee of 9%,
         which is applicable to both domestic and international transactions.</p>
         <p>In addition, there is a PayPal Processing Fee which is determined
@@ -64,12 +101,12 @@
         <p>International Transactions: 4.4% + 30 cents</p>
       </div>
 
-      <div class="feebreak-container" id="depopfeeinfo">
+      <div class="container feebreak-container" id="depopfeeinfo">
         <h3>Fee Breakdown</h3>
+        <hr>
         <p>Sellers pay a Commission fee of 10%.</p>
         <p>In addition, there is a PayPal transaction fee of 2.9% + $0.30 in the US
-          or 2.9% + £0.30 in the UK</p>
+          or 2.9% + £0.30 in the UK.</p>
       </div>
-
   </body>
 </html>
